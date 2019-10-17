@@ -1,19 +1,13 @@
-import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import React from 'react'
 
 const CommentBox = () => {
-    const dispatch = useDispatch();
-    const [comment, setComment] = useState("")
+    const [comment, setComment] = React.useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if(comment.trim() === '') return
-                
-        dispatch({
-            type: 'TEST_ACTION',
-            payload: comment
-        })
+
         setComment('')
     }
 
