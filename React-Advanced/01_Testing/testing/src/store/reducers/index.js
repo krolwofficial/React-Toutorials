@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import boxReducer from './boxReducer'
+import comments from './comments'
 
 const rootReducer = combineReducers({
-    box: boxReducer
+    comments: comments
 })
 
 export default rootReducer

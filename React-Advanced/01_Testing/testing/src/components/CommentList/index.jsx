@@ -2,13 +2,13 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 
 const CommentList = () => {
-    const comments = useSelector(state => state.box)
+    const comments = useSelector(state => state.comments)
 
     return (
         <ul>
             {
                 comments.map(comment => (
-                    <li key={comment.id}>{comment.text}</li>
+                    <li key={comment}>{comment}</li>
                 ))
             }
         </ul>

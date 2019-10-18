@@ -1,11 +1,16 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import CommentBox from 'components/CommentBox/simple'
+import CommentBox from 'components/CommentBox'
+import Provider from 'store'
 
 let wrapper
 
 beforeEach(() => {
-    wrapper = mount(<CommentBox/>)
+    wrapper = mount(
+        <Provider>
+            <CommentBox/>
+        </Provider>
+        )
 })
 
 afterEach(() => {
