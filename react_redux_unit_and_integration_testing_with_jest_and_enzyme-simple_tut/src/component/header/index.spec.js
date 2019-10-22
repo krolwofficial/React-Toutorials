@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import {findByTestAtrr} from 'helpers/index'
+import {findByTestAtrr, checkProps} from 'helpers/index'
 import Header from './index'
 
 const setUp = (props={}) => {
@@ -9,6 +9,16 @@ const setUp = (props={}) => {
 }
 
 describe('Header component', () => {
+
+    describe('Checking PropTypes', () => {
+        it('Should not throw a warning', () => {
+            const expectedProps = {
+                title: "Foo"
+            }
+            const propsErr = checkProps(Header, expectedProps)
+            expect(propsErr).toBeUndefined()
+        })
+    })
 
     describe('Have props', () => {
         let wrapper;
